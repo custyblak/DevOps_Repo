@@ -48,3 +48,5 @@ fi
 
 # Restart Apache to load the new index.html
 systemctl restart apache2
+
+su ubuntu

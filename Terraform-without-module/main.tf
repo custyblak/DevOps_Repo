@@ -8,7 +8,7 @@ resource "aws_vpc" "My_AWS_VPC" {
 
 resource "aws_subnet" "subnets" {
   vpc_id                  = aws_vpc.My_AWS_VPC.id
-  map_public_ip_on_launch = true
+  # map_public_ip_on_launch = true
 
   for_each          = var.VPC_Subnets
   availability_zone = each.value.availability_zone
