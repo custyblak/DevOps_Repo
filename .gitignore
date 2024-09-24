@@ -1,4 +1,4 @@
-aws/*
+aws*
 *.tfstate*
 *.lock*
 *_key*
