@@ -61,17 +61,17 @@ resource "aws_route_table_association" "Jenkins_R" {
 }
 
 resource "aws_instance" "Jenkins_VM" {
-  ami             = var.ami
-  instance_type   = var.ami_type
-  subnet_id       = aws_subnet.Jenkins_sub.id
-  vpc_security_group_ids = [ aws_security_group.Jenskin-ports.id ]
-  key_name        = aws_key_pair.EC2_key.key_name
-  user_data       = file("Jenkins_installation.sh")
+  ami                    = var.ami
+  instance_type          = var.ami_type
+  subnet_id              = aws_subnet.Jenkins_sub.id
+  vpc_security_group_ids = [aws_security_group.Jenskin-ports.id]
+  key_name               = aws_key_pair.EC2_key.key_name
+  user_data              = file("Jenkins_installation.sh")
 }
 
 resource "aws_key_pair" "EC2_key" {
   key_name   = "My_EC2_key"
-  public_key = file("/home/custyblak/Documents/Terraform/Terraform-without-module/My_EC2_key.pub")
+  public_key = file("/home/custyblak/Documents/Terraform/Terraform/Terraform-without-module/My_EC2_key.pub")
 }
 
 output "Pub_ip" {

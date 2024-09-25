@@ -22,5 +22,5 @@ variable "ami" {
   default = "ami-0e86e20dae9224db8"
 }
 variable "ami_type" {
-  default = "t2.micro"
+  default = "t3.medium"
 }
